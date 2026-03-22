@@ -4,6 +4,7 @@
 		"./scripts/*.ts",
 		"./index.ts",
 	],
+	"exclude": ["tailwind.config.ts"],
 	"compilerOptions": {
 		"target": "es2020",
 		"module": "nodenext",
