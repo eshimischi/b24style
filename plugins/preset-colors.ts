@@ -284,12 +284,12 @@ export default {
 					'background-on': palette.blue['700'] || '#008dba',
 					'link': palette.blue['900'] || '#006484'
 				},
-				
+
 				note: palette.orange['30'] || '#fdfae1',
 				subtle: palette.gray['700'] || '#828b95',
 				extranet: palette.orange['600'] || '#e89b06',
 				tertiary: palette.gray['50'] || '#eef2f4',
-				
+
 				tag: {
 					'1': palette.blue['320'] || '#bcedfc',
 					'2': palette.blue['570'] || '#00baf2',
@@ -301,7 +301,7 @@ export default {
 					'8': palette.gray['340'] || '#ccd3dd',
 					'9': palette.gray['190'] || '#e2e3e5'
 				},
-				
+
 				accent: {
 					'light-blue': palette.blue['660'] || '#559be6',
 					'aqua': palette.cyan['350'] || '#55d0e0',
@@ -313,13 +313,13 @@ export default {
 					'lavender': palette.ai['500'] || '#8e52ec',
 					'yellow': palette.orange['230'] || '#fef3b8'
 				},
-				
+
 				copilot: {
 					primary: palette.ai['500'] || '#8e52ec',
 					secondary: palette.ai['330'] || '#b095dc',
 					dark: palette.ai['800'] || '#682ac6'
 				},
-				
+
 				base: {
 					20: palette.gray['20'] || '#f8fafb',
 					30: palette.gray['30'] || '#f5f7f8', /* << #f6f8f9 ~ 0.2 */

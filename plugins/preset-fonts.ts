@@ -127,7 +127,7 @@ export default {
 				'sans-serif'
 			],
 			// endregion ////
-			
+
 			// region Fonts.Custom ////
 			'b24-opensans': [
 				'"Open Sans"',

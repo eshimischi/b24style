@@ -24,7 +24,7 @@ async function copyFiles(
 	{
 		await fs.mkdir(dest, { recursive: true })
 		const entries = await fs.readdir(src, { withFileTypes: true })
-		
+
 		for(const entry of entries)
 		{
 			const srcPath = path.join(src, entry.name)

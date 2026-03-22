@@ -13,7 +13,7 @@ export default {
 			lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
 			xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
 			'2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
-			
+
 			'top-2xs': '0px -1px 2px 0px rgb(0 0 0 / 0.06)',
 			'top-xs': '0px -2px 2px 0px rgb(0 0 0 / 0.07)',
 			'top-sm': '0px -2px 4px 0px rgb(0 0 0 / 0.08)',
@@ -23,7 +23,7 @@ export default {
 			'top-2xl': '0px -8px 10px 0px rgb(0 0 0 / 0.1)',
 			'top-3xl': '0px -12px 17px 0px rgb(0 0 0 / 0.1)',
 			'top-4xl': '0px -16px 24px 0px rgb(0 0 0 / 0.11)',
-			
+
 			'right-2xs': '1px 0px 2px 0px rgb(0 0 0 / 0.06)',
 			'right-xs': '2px 0px 2px 0px rgb(0 0 0 / 0.07)',
 			'right-sm': '2px 0px 4px 0px rgb(0 0 0 / 0.08)',
@@ -33,7 +33,7 @@ export default {
 			'right-2xl': '8px 0px 10px 0px rgb(0 0 0 / 0.1)',
 			'right-3xl': '12px 0px 17px 0px rgb(0 0 0 / 0.1)',
 			'right-4xl': '16px 0px 24px 0px rgb(0 0 0 / 0.11)',
-			
+
 			'bottom-2xs': '0px 1px 2px 0px rgb(0 0 0 / 0.06)',
 			'bottom-xs': '0px 2px 2px 0px rgb(0 0 0 / 0.07)',
 			'bottom-sm': '0px 2px 4px 0px rgb(0 0 0 / 0.08)',
@@ -43,7 +43,7 @@ export default {
 			'bottom-2xl': '0px 8px 10px 0px rgb(0 0 0 / 0.1)',
 			'bottom-3xl': '0px 12px 17px 0px rgb(0 0 0 / 0.1)',
 			'bottom-4xl': '0px 16px 24px 0px rgb(0 0 0 / 0.11)',
-			
+
 			'left-2xs': '-1px 0px 2px 0px rgb(0 0 0 / 0.06)',
 			'left-xs': '-2px 0px 2px 0px rgb(0 0 0 / 0.07)',
 			'left-sm': '-2px 0px 4px 0px rgb(0 0 0 / 0.08)',

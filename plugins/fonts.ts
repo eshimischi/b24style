@@ -19,7 +19,6 @@ interface FontConfig extends RecursiveKeyValuePair
 interface IFont
 {
 	getConfig(): FontConfig
-	
 	getTitle(): string
 }
 
@@ -49,14 +48,14 @@ class FontLocal
 	#path: string
 	#typeList: FontType[]
 	#unicodeRange: null|string
-	
+
 	#family: string
 	#localTitle: string
-	
+
 	#weight: number|string
 	#style: FontStyle
 	#display: FontDisplay
-	
+
 	constructor(
 		family: string,
 		weight: number|string,
@@ -69,64 +68,64 @@ class FontLocal
 	)
 	{
 		this.#family = family
-		
+
 		this.#weight = weight
 		this.#style = style
 		this.#display = display
-		
+
 		this.#localTitle = localTitle
 		this.#typeList = typeList
 		this.#path = path
 		this.#unicodeRange = unicodeRange
 	}
-	
+
 	private getPath(): string
 	{
 		return this.#path
 	}
-	
+
 	private getLocalTitle(): string
 	{
 		return this.#localTitle
 	}
-	
+
 	private getFamily(): string
 	{
 		return this.#family
 	}
-	
+
 	private getWeight(): string
 	{
 		return `${this.#weight}`
 	}
-	
+
 	private getStyle(): FontStyle
 	{
 		return this.#style
 	}
-	
+
 	private getDisplay(): FontDisplay
 	{
 		return this.#display
 	}
-	
+
 	private getTypeList(): FontType[]
 	{
 		return this.#typeList
 	}
-	
+
 	private getUnicodeRange(): string
 	{
 		return this.#unicodeRange || ''
 	}
-	
+
 	private getSrc(): string
 	{
 		if(this.getTypeList().length < 1)
 		{
 			return ''
 		}
-		
+
 		return this.getTypeList().map((type: FontType) =>
 		{
 			switch(type)
@@ -144,7 +143,7 @@ class FontLocal
 			}
 		}).join(',')
 	}
-	
+
 	getConfig(): FontConfig
 	{
 		return {
@@ -167,7 +166,7 @@ class FontLocal
 			)
 		} as FontConfig
 	}
-	
+
 	getTitle(): string
 	{
 		return `${this.getFamily()} ${this.getWeight()} ${this.getStyle()}`
@@ -177,18 +176,18 @@ class FontLocal
 class FontsCollection
 {
 	#list: IFont[] = [];
-	
+
 	constructor()
 	{
 	}
-	
+
 	addItem(item: IFont)
 	{
 		this.#list.push(item)
-		
+
 		return this
 	}
-	
+
 	getList(): IFont[]
 	{
 		return this.#list
@@ -273,7 +272,7 @@ groupsFonts.addItem(new FontLocal(
 		[FontType.local, FontType.woff2, FontType.woff]
 	))
 	// endregion ////
-	
+
 	// region Roboto.Mono ////
 	.addItem(new FontLocal(
 		'Roboto Mono',
@@ -348,7 +347,7 @@ groupsFonts.addItem(new FontLocal(
 		[FontType.local, FontType.woff2, FontType.woff]
 	))
 	// endregion ////
-	
+
 	// region Montserrat ////
 	.addItem(new FontLocal(
 		'Montserrat',
@@ -387,7 +386,7 @@ groupsFonts.addItem(new FontLocal(
 		[FontType.local, FontType.woff2, FontType.woff]
 	))
 	// endregion ////
-	
+
 	// region Open Sans ////
 	.addItem(new FontLocal(
 		'Open Sans',
@@ -426,7 +425,7 @@ groupsFonts.addItem(new FontLocal(
 		[FontType.local, FontType.woff, FontType.ttf]
 	))
 	// endregion ////
-	
+
 	// region Comforter Brush ////
 	.addItem(new FontLocal(
 		'Comforter Brush',
