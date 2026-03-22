@@ -2,7 +2,6 @@
 	"name": "@bitrix24/b24style",
 	"version": "1.0.1",
 	"author": "Bitrix",
-	
 	"license": "MIT",
 	"description": "Design UIKit tokens Bitrix24 for web application development",
 	"keywords": [
@@ -35,9 +34,6 @@
 	"bin": {
 		"copy-fonts": "./dist/scripts/copyFonts.js"
 	},
-	"workspaces": [
-		"playground"
-	],
 	"scripts": {
 		"build": "npm-run-all -s build:*",
 		"build:clear": "rimraf ./dist",
@@ -49,33 +45,32 @@
 		"playground:clear-fonts": "rimraf ./playground/public/fonts",
 		"playground:copy-fonts": "npx copy-fonts --dest=playground/public/fonts",
 		"playground:run-dev": "npm run --workspace=playground dev",
-		
 		"docs:dev": "rimraf ./docs/public/frames/fonts & npx copy-fonts --dest=docs/public/frames/fonts & vitepress dev docs",
-		
 		"docs:build": "npm-run-all -s docs:build:*",
 		"docs:build:init": "npm run build",
 		"docs:build:docs": "vitepress build docs",
 		"docs:preview": "vitepress preview docs"
 	},
 	"dependencies": {
-		"@tailwindcss/forms": "^0.5.10",
-		"tailwindcss": "^3.4.17"
+		"@tailwindcss/forms": "^0.5.11",
+		"tailwindcss": "^4.2.2"
 	},
 	"devDependencies": {
-		"@whyframe/core": "^0.1.12",
-		"@whyframe/vue": "^0.1.7",
+		"@types/node": "^25.5.0",
+		"@whyframe/core": "^0.1.14",
+		"@whyframe/vue": "^0.1.9",
+		"autoprefixer": "^10.4.27",
 		"mini-svg-data-uri": "^1.4.4",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.5.0",
-		"autoprefixer": "^10.4.20",
-		"rimraf": "^6.0.1",
+		"postcss": "^8.5.8",
+		"rimraf": "^6.1.3",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.7.3",
-		"vitepress": "^1.5.0",
-		"vue": "^3.5.13"
+		"typescript": "^5.9.3",
+		"vitepress": "^1.6.4",
+		"vue": "^3.5.30"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=20"
 	},
 	"browserslist": [
 		"> 7%"
