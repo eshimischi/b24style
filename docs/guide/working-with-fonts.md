@@ -33,13 +33,13 @@ In rare cases, you may need local fonts.
 			<tr>
 				<td translate="no" class="variable">font-b24-primary</td>
 				<td translate="no" class="value">
-					 synonym `b24-system`
+					synonym `b24-system`
 				</td>
 			</tr>
 			<tr>
 				<td translate="no" class="variable">font-b24-secondary</td>
 				<td translate="no" class="value">
-					 synonym `b24-system`
+					synonym `b24-system`
 				</td>
 			</tr>
 			<tr>
@@ -51,7 +51,7 @@ In rare cases, you may need local fonts.
 			<tr>
 				<td translate="no" class="variable">font-b24-helvetica</td>
 				<td translate="no" class="value">
-					 font-family: {{ presetFonts.theme.fontFamily['b24-helvetica'].join(', ') }};
+					font-family: {{ presetFonts.theme.fontFamily['b24-helvetica'].join(', ') }};
 				</td>
 			</tr>
 		</tbody>
@@ -61,32 +61,32 @@ In rare cases, you may need local fonts.
 <iframe data-why style="min-height: 480px">
 <div class="flex flex-col gap-8">
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-system</span>
-		<p class="font-b24-system text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-system</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-system dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-primary</span>
-		<p class="font-b24-primary text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-primary</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-primary dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-secondary</span>
-		<p class="font-b24-secondary text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-secondary</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-secondary dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-system-mono</span>
-		<p class="font-b24-system-mono text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-system-mono</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-system-mono dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-helvetica</span>
-		<p class="font-b24-helvetica text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-helvetica</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-helvetica dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
@@ -185,32 +185,32 @@ You can control the typeface of text using the font family utilities.
 <iframe data-why style="min-height: 480px">
 <div class="flex flex-col gap-8">
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-opensans</span>
-		<p class="font-b24-opensans text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-opensans</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-opensans dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-roboto</span>
-		<p class="font-b24-roboto text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-roboto</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-roboto dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-roboto-mono</span>
-		<p class="font-b24-roboto-mono text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-roboto-mono</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-roboto-mono dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-montserrat</span>
-		<p class="font-b24-montserrat text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-montserrat</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-montserrat dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>
 	<div>
-		<span class="font-medium text-sm text-gray-500 font-mono mb-3 dark:text-gray-400">font-b24-comforter-brush</span>
-		<p class="font-b24-comforter-brush text-4xl font-thin text-gray-900 dark:text-gray-200">
+		<span class="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-b24-comforter-brush</span>
+		<p class="text-4xl font-thin text-gray-900 font-b24-comforter-brush dark:text-gray-200">
 			The quick brown fox jumps over the lazy dog.
 		</p>
 	</div>

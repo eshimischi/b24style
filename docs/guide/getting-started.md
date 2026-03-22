@@ -5,16 +5,17 @@
 This tool is implemented as a plugin for Tailwind CSS.
 
 ## Prerequisites {#prerequisites}
-- [Node.js](https://nodejs.org/) version 18 or higher.
-- [Tailwind CSS](https://tailwindcss.com/) version 3.4.10 or higher.
+- [Node.js](https://nodejs.org/) version 20 or higher.
+- [Pnpm](https://pnpm.io) version 10.32.1 or higher
+- [Tailwind CSS](https://tailwindcss.com/) version 4.0.0 or higher.
 
 ## Installation {#installation}
-1. Install `@bitrix24/style` using `npm`:
+1. Install `@bitrix24/style` using `pnpm`:
 
 ::: code-group
 
-```sh [npm]
-$ npm i @bitrix24/b24style
+```sh [pnpm]
+$ pnpm add @bitrix24/b24style
 ```
 
 :::

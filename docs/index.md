@@ -15,7 +15,7 @@ hero:
   image:
     src: /bitrix24_style-logo-lage.webp
     alt: '@bitrix24/b24style'
-  
+
 features:
   - title: 'Unified Style for All Components'
     details: With the plugin, all components of your application will be styled uniformly, adhering to Bitrix24 standards
