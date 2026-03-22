@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -6,6 +7,7 @@ export default defineConfig({
 		port: 3000
 	},
 	plugins: [
-		vue()
+		vue(),
+		tailwindcss()
 	],
 })
