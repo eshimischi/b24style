@@ -4,20 +4,17 @@ import { configParams } from './params'
 export const en = defineConfig({
 	lang: 'en-US',
 	description: 'Bitrix24 Styles Based on Tailwind CSS',
-	
+
 	themeConfig: {
 		nav: nav(),
-		
 		sidebar: {
 			'/guide/': { base: '/guide/', items: sidebarGuide() },
 			'/reference/': { base: '/reference/', items: sidebarReference() }
 		},
-		
 		editLink: {
 			pattern: 'https://github.com/bitrix24/b24style/edit/main/docs/:path',
 			text: 'Edit this page on GitHub'
 		},
-		
 		footer: {
 			message: 'Released under the MIT License.',
 			copyright: 'Copyright © 2024-present Bitrix24'

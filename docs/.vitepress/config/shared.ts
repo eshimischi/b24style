@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import path from 'path'
+import path from 'node:path'
 import { whyframe } from '@whyframe/core'
 import { whyframeVue } from '@whyframe/vue'
 
@@ -18,11 +18,9 @@ const baseFolder: string = '/b24style/';
 
 export const shared = defineConfig({
 	title: '@bitrix24/b24style',
-	
 	lastUpdated: true,
 	cleanUrls: false,
 	metaChunk: true,
-	
 	base: baseFolder,
 	/* prettier-ignore */
 	head: [
@@ -35,11 +33,9 @@ export const shared = defineConfig({
 		['meta', { property: 'og:image', content: `${domain}${baseFolder}bitrix24_style.jpg` }],
 		['meta', { property: 'og:url', content: `${domain}${baseFolder}` }],
 	],
-	
 	themeConfig: {
 		siteTitle: false,
 		logo: { src: '/b24-logo.svg'},
-		
 		socialLinks: [
 			{
 				icon: {
@@ -50,7 +46,6 @@ export const shared = defineConfig({
 			{icon: 'github', link: 'https://github.com/bitrix24/b24style'},
 			{icon: 'npm', link: 'https://www.npmjs.com/package/@bitrix24/b24style'}
 		],
-		
 		search: {
 			provider: 'local',
 			options: {

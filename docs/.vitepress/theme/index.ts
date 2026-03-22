@@ -25,7 +25,7 @@ import presetTransition from '../../../plugins/preset-transition';
 export default {
 	extends: DefaultTheme,
 	Layout: DynamicLayout,
-	enhanceApp({app})
+	enhanceApp({ app })
 	{
 		app.provide('presetColors', presetColors)
 		app.provide('presetSize', presetSize)
@@ -35,7 +35,7 @@ export default {
 		app.provide('presetShadow', presetShadow)
 		app.provide('presetAnimation', presetAnimation)
 		app.provide('presetTransition', presetTransition)
-		
+
 		app.component('ShTailwindCssLink', ShTailwindCssLink)
 		//app.component('ShDocTableInfo', ShDocTableInfo)
 		app.component('ColorPaletteReference', ColorPaletteReference)
