@@ -18,11 +18,11 @@ export default {
 		Layout,
 		KeyCaster,
 	},
-	
+
 	setup() {
 		let route = useRoute()
 		let layout = computed(() => route.query['layout'] ?? 'full')
-		
+
 		return {
 			layout,
 		}

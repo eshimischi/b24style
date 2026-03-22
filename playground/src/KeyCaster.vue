@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="pointer-events-none fixed bottom-4 right-4 z-50 cursor-default select-none overflow-hidden rounded-md bg-blue-800 px-4 py-2 text-2xl tracking-wide text-blue-100 shadow"
+		class="overflow-hidden fixed right-4 bottom-4 z-50 px-4 py-2 text-2xl tracking-wide text-blue-100 bg-blue-800 rounded-md shadow cursor-default pointer-events-none select-none"
 		v-if="keys.length > 0"
 	>
 		{{ keys.slice().reverse().join(' ') }}
@@ -53,7 +53,7 @@ let KeyDisplay = isMac
 export default defineComponent({
 	setup() {
 		let keys = ref([])
-		
+
 		window.addEventListener('keydown', (event) => {
 			keys.value.unshift(
 				event.shiftKey && event.key !== 'Shift'
@@ -62,7 +62,7 @@ export default defineComponent({
 			)
 			setTimeout(() => keys.value.pop(), 2000)
 		})
-		
+
 		return { keys }
 	},
 })
