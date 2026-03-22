@@ -1,7 +1,9 @@
-import svgToDataUri from 'mini-svg-data-uri';
-import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
+import svgToDataUri from 'mini-svg-data-uri'
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
+import type { Config } from 'tailwindcss'
+import type { PluginAPI } from 'tailwindcss/plugin'
 
-let config = {
+let config: Config = {
 	important: true,
 	content: [
 		'./docs/.vitepress/**/*.{js,ts,vue}',
@@ -16,9 +18,7 @@ let config = {
 			logs: false,
 			useLocalFonts: true,
 		}),
-		//require('@tailwindcss/typography'),
-		//require('@tailwindcss/forms'),
-		function ({ matchUtilities, theme }) {
+		function ({ matchUtilities, theme }: PluginAPI) {
 			matchUtilities(
 				{
 					'bg-grid': (value) => ({
@@ -37,6 +37,6 @@ let config = {
 			)
 		},
 	],
-}
+} satisfies Config
 
-module.exports = config
+export default config
