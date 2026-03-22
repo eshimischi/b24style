@@ -1,17 +1,18 @@
 import plugin from 'tailwindcss/plugin'
+import type { PluginAPI } from 'tailwindcss/plugin'
 import tailwindcssForms from '@tailwindcss/forms'
-import presetBorder from './preset-border'
-import presetColors from './preset-colors'
-import presetFonts from './preset-fonts'
-import presetShadow from './preset-shadow'
-import presetSize from './preset-size'
-import presetText from './preset-text'
-import presetTransition from './preset-transition'
-import presetAnimation from './preset-animation'
-import groupsFonts from './fonts'
+import presetBorder from './preset-border.js'
+import presetColors from './preset-colors.js'
+import presetFonts from './preset-fonts.js'
+import presetShadow from './preset-shadow.js'
+import presetSize from './preset-size.js'
+import presetText from './preset-text.js'
+import presetTransition from './preset-transition.js'
+import presetAnimation from './preset-animation.js'
+import groupsFonts from './fonts.js'
 import fs from 'fs'
 import * as path from 'path'
-import {fileURLToPath} from 'url'
+import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -46,7 +47,7 @@ interface PluginOptions
 	 * @default false
 	 */
 	logs?: boolean
-	
+
 	/**
 	 * If it's true, @bitrix24/ui include custom fonts:
 	 * * b24-opensans
@@ -56,7 +57,7 @@ interface PluginOptions
 	 * * b24-comforter-brush
 	 *
 	 * You need copy them to public folder ~> ./*\/fonts
-	 
+
 	 * Use ```npm @bitrix24/ui copy-fonts```. It's copy to public/fonts.
 	 * Or set target folder like this ~> ```npm @bitrix24/ui copy-fonts --dest=FolderForPublicContent/fonts```
 	 *
@@ -65,17 +66,19 @@ interface PluginOptions
 	useLocalFonts?: boolean
 }
 
-export type {PluginOptions as Config}
+export type { PluginOptions as Config }
 
-export default plugin.withOptions<PluginOptions>(
-	(options = {logs: false, useLocalFonts: false}) => ({addBase}) =>
-	{
+export const bitrix24UiPlugin: ReturnType<
+	typeof plugin.withOptions<PluginOptions>
+> = plugin.withOptions<PluginOptions>(
+		(options = { logs: false, useLocalFonts: false }
+	) => ({ addBase }: PluginAPI) => {
 		let isLog = true
 		if(!options.logs)
 		{
 			isLog = false
 		}
-		
+
 		if(options.useLocalFonts)
 		{
 			if(isLog)
@@ -91,7 +94,7 @@ export default plugin.withOptions<PluginOptions>(
 				}
 			})
 		}
-		
+
 		if(isLog)
 		{
 			let messages = [
@@ -103,14 +106,14 @@ export default plugin.withOptions<PluginOptions>(
 			console.log()
 		}
 	},
-	(options = {logs: false, useLocalFonts: false}) =>
+	(options = { logs: false, useLocalFonts: false }) =>
 	{
 		let isLog = true
 		if(!options.logs)
 		{
 			isLog = false
 		}
-		
+
 		if(isLog)
 		{
 			console.log()
@@ -122,7 +125,7 @@ export default plugin.withOptions<PluginOptions>(
 			console.log(`├─ [Fonts]`)
 		}
 		let fontFamily: {}
-		
+
 		if(options.useLocalFonts)
 		{
 			fontFamily = presetFonts.theme.fontFamily
@@ -146,17 +149,17 @@ export default plugin.withOptions<PluginOptions>(
 				'b24-secondary',
 				'b24-helvetica'
 			]
-			
+
 			fontFamily = Object.keys(presetFonts.theme.fontFamily)
 				.filter(key => allowed.includes(key))
 				.reduce((obj, key) =>
 				{
 					// @ts-ignore
 					obj[key] = presetFonts.theme.fontFamily[key]
-					
+
 					return obj
 				}, {})
-			
+
 			if(isLog)
 			{
 				console.log(`├── ✔ ︎fontFamily`)
@@ -164,20 +167,20 @@ export default plugin.withOptions<PluginOptions>(
 				{
 					console.log(`├───── ${fontKey}`)
 				})
-				
+
 				Object.keys(presetFonts.theme.fontFamily)
 					.filter(key => !allowed.includes(key))
 					.forEach((fontKey) =>
 					{
 						console.log(`├───── × ${fontKey}`)
 					})
-				
+
 				console.log(
 					`├───── Ⓘ To connect the remaining fonts, set the parameter  useLocalFonts = true in the plugin configuration.`
 				)
 			}
 		}
-		
+
 		if(isLog)
 		{
 			console.log(`├── ✔ fontSize`)
@@ -199,7 +202,7 @@ export default plugin.withOptions<PluginOptions>(
 			console.log(`├─ [Plugins]`)
 			console.log(`├── ✔ @tailwindcss/forms`)
 		}
-		
+
 		return {
 			// presets: [], ////
 			useLocalFonts: options.useLocalFonts,
@@ -245,3 +248,10 @@ export default plugin.withOptions<PluginOptions>(
 		}
 	}
 )
+
+export default bitrix24UiPlugin
+
+/**
+ * Named export for explicit usage
+ */
+export { bitrix24UiPlugin as plugin }
