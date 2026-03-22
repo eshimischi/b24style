@@ -10,11 +10,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div id="example" class="
-		relative rounded-lg overflow-hidden
-		min-h-screen
-		bg-gray-20 dark:bg-gray-800/25
-	">
+	<div id="example" class="overflow-hidden relative min-h-screen rounded-lg bg-gray-20 dark:bg-gray-800/25">
 		<div
 			style="background-position:10px 10px"
 			class="
@@ -23,20 +19,9 @@ onMounted(() => {
 				dark:bg-grid-gray-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]
 			"
 		></div>
-		<div class="
-			relative rounded-lg overflow-hidden
-			p-8
-			min-h-screen
-			flex flex-col flex-nowrap
-			justify-center items-center
-		">
-			<div ref="app" class="flex flex-row flex-nowrap items-center justify-center"></div>
+		<div class="flex overflow-hidden relative flex-col flex-nowrap justify-center items-center p-8 min-h-screen rounded-lg">
+			<div ref="app" class="flex flex-row flex-nowrap justify-center items-center"></div>
 		</div>
-		<div class="
-			pointer-events-none
-			absolute rounded-lg inset-0
-			border
-			border-black/5 dark:border-white/5
-		"></div>
+		<div class="absolute inset-0 rounded-lg border pointer-events-none border-black/5 dark:border-white/5"></div>
 	</div>
 </template>

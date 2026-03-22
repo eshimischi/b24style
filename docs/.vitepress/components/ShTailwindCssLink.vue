@@ -39,29 +39,29 @@ const props = withDefaults(defineProps<Props>(), {})
 }
 
 .ShTailwindCssLink {
-		text-decoration: none;
-		--tw-ring-opacity: 1;
-		--tw-ring-color: rgb(var(--color-gray-300) / var(--tw-ring-opacity));
-		--tw-ring-inset: inset;
-		--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-		--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-		--tw-text-opacity: 1;
-		color: rgb(var(--color-gray-900) / var(--tw-text-opacity));
-		font-weight: 500;
-		font-size: .875rem;
-		line-height: 1.25rem;
-		padding-bottom: .375rem;
-		padding-top: .375rem;
-		padding-left: .625rem;
-		padding-right: .625rem;
-		--tw-bg-opacity: 1;
-		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-		border-radius: .375rem;
-		column-gap: .375rem;
-		align-items: center;
-		flex-shrink: 0;
-		display: inline-flex;
+	text-decoration: none;
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgb(var(--color-gray-300) / var(--tw-ring-opacity));
+	--tw-ring-inset: inset;
+	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	--tw-text-opacity: 1;
+	color: rgb(var(--color-gray-900) / var(--tw-text-opacity));
+	font-weight: 500;
+	font-size: .875rem;
+	line-height: 1.25rem;
+	padding-bottom: .375rem;
+	padding-top: .375rem;
+	padding-left: .625rem;
+	padding-right: .625rem;
+	--tw-bg-opacity: 1;
+	background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+	border-radius: .375rem;
+	column-gap: .375rem;
+	align-items: center;
+	flex-shrink: 0;
+	display: inline-flex;
 }
 
 .ShTailwindCssLink:hover
@@ -93,7 +93,6 @@ const props = withDefaults(defineProps<Props>(), {})
 {
 	background-color: rgb(var(--color-gray-800) / .5);
 }
-
 
 .ShTailwindCssLink-Icon
 {

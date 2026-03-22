@@ -15,7 +15,7 @@ const basePalette = [
 
 const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	const result: Record<string, ColorGroup> = {}
-	
+
 	for(let base of basePalette)
 	{
 		let groupTitle = base
@@ -24,9 +24,9 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 				return i !== 0 && l.toUpperCase() === l ? [' ', l] : [l]
 			})
 			.join('')
-		
+
 		groupTitle = groupTitle.charAt(0).toUpperCase() + groupTitle.slice(1)
-		
+
 		result[base] = {
 			title: groupTitle,
 			groups: {
@@ -45,12 +45,12 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 			defaultValue: ''
 		} as ColorGroup
 	}
-	
+
 	Object.entries(presetColors.theme.colors).forEach(([keyGroup, value]) => {
 		if(!basePalette.includes(keyGroup)){ return }
-		
+
 		const group = result[keyGroup] as ColorGroup;
-		
+
 		for(const [keyColor, valueColor] of Object.entries(value))
 		{
 			if(keyColor === 'DEFAULT')
@@ -59,14 +59,14 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 				break;
 			}
 		}
-		
+
 		for (const [keyColor, valueColor] of Object.entries(value))
 		{
 			if(keyColor === 'DEFAULT'){ continue; }
 			if(keyColor === 'solid'){ continue; }
-			
+
 			let needKeyValue = Number.parseInt(keyColor);
-			
+
 			// region get group key ////
 			// 100, 150, 200, 300, 400, 500, 600, 700, 800, 900, 950 ////
 			if(needKeyValue <= 100)
@@ -114,7 +114,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 				needKeyValue = 950
 			}
 			// endregion ////
-			
+
 			if(!group.groups[needKeyValue.toString()])
 			{
 				console.error(
@@ -133,13 +133,13 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 			}
 		}
 	})
-	
+
 	// region final prepare ////
 	Object.entries(result).forEach(([keyGroup, value]) => {
 		value.groups['100'] = value.groups['100'].reverse();
 	});
 	// endregion ////
-	
+
 	// region Custom add ////
 	// region Gray ////
 	result.gray.groups['100'].push({
@@ -153,13 +153,13 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 		value: presetColors.theme.colors.black.DEFAULT,
 		isDefault: result.gray.defaultValue === presetColors.theme.colors.black.DEFAULT
 	} as Color)
-	
+
 	result.gray.groups['950'].push({
 		title: 'dark',
 		value: presetColors.theme.colors.black.dark,
 		isDefault: result.gray.defaultValue === presetColors.theme.colors.black.dark
 	} as Color)
-	
+
 	result.gray.groups['950'].push({
 		title: 'ebony',
 		value: presetColors.theme.colors.black.ebony,
@@ -183,7 +183,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 			<div class="color-palette-reference--title" data-class="text-sm font-semibold text-gray-900 dark:text-gray-200 2xl:col-end-1 2xl:pt-2.5">
 				{{ list.title }}
 			</div>
-			<div class="color-palette-reference--group" data-class="grid mt-3 grid-cols-1 sm:grid-cols-11 gap-y-3 gap-x-2 sm:mt-2 2xl:mt-0">
+			<div class="color-palette-reference--group" data-class="grid grid-cols-1 gap-x-2 gap-y-3 mt-3 sm:grid-cols-11 sm:mt-2 2xl:mt-0">
 				<template
 					v-for="(colors, title) in list.groups"
 					:key="title"
@@ -210,7 +210,6 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	column-gap: .5rem;
 	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 	display: grid;
-	
 	--sh-title-color: #0f172a;
 }
 
@@ -251,8 +250,6 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: stretch;
-	
-	
 }
 
 @media (min-width: 640px)
@@ -261,7 +258,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	{
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
-	
+
 	.color-palette-reference--group
 	{
 		grid-template-columns: repeat(11, minmax(0, 1fr));
@@ -275,13 +272,13 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	{
 		display: contents;
 	}
-	
+
 	.color-palette-reference--title
 	{
 		padding-top: .625rem;
 		grid-column-end: 1;
 	}
-	
+
 	.color-palette-reference--group
 	{
 		margin-top: 0;

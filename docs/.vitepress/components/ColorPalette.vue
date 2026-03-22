@@ -11,15 +11,15 @@ const props = withDefaults(defineProps<Props>(), {})
 </script>
 
 <template>
-	<div class="color-palette" data-class="relative flex">
-		<div class="color-palette--inner" data-class="flex items-center gap-x-3 w-full cursor-pointer sm:block sm:space-y-1.5">
+	<div class="color-palette" data-class="flex relative">
+		<div class="color-palette--inner" data-class="flex gap-x-3 items-center w-full cursor-pointer sm:block sm:space-y-1.5">
 			<div class="color-palette--value"
 				:style="{backgroundColor: color.value}"
-				data-class="h-10 w-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
+				data-class="w-10 h-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
 			></div>
-			<div class="color-palette--is-default" v-if="color.isDefault" data-class="absolute -top-2 -left-1 bg-accent-light-blue text-white px-2xs py-3xs text-5xs rounded-lg">default</div>
+			<div class="color-palette--is-default" v-if="color.isDefault" data-class="absolute -left-1 -top-2 text-white rounded-lg bg-accent-light-blue px-2xs py-3xs text-5xs">default</div>
 			<div class="color-palette--wrapper-title" data-class="px-0.5">
-				<div class="color-palette--title" data-class="w-6 font-medium text-xs text-gray-900 2xl:w-full dark:text-white">
+				<div class="color-palette--title" data-class="w-6 text-xs font-medium text-gray-900 2xl:w-full dark:text-white">
 					{{ color.title }}
 				</div>
 				<div class="color-palette--title-data" data-class="text-gray-500 text-xs font-mono lowercase dark:text-gray-400 sm:text-[0.625rem] md:text-xs lg:text-[0.625rem] 2xl:text-xs">
@@ -35,7 +35,7 @@ const props = withDefaults(defineProps<Props>(), {})
 {
 	position: relative;
 	display: flex;
-	
+
 	--sh-ring-offset-width: 0px;
 	--sh-ring-offset-color: #fff;
 	--sh-shadow: 0 0 #0000;
@@ -43,7 +43,6 @@ const props = withDefaults(defineProps<Props>(), {})
 	--sh-ring-inset: inset;
 	--sh-ring-offset-shadow: var(--sh-ring-inset) 0 0 0 var(--sh-ring-offset-width) var(--sh-ring-offset-color);
 	--sh-ring-shadow: var(--sh-ring-inset) 0 0 0 calc(1px + var(--sh-ring-offset-width)) var(--sh-ring-color);
-	
 	--sh-title-color: #0f172a;
 	--sh-title-data-color: #64748b;
 }
@@ -52,7 +51,6 @@ const props = withDefaults(defineProps<Props>(), {})
 {
 	--sh-ring-offset-color: #fff;
 	--sh-ring-color: #ffffff57;
-	
 	--sh-title-color: #ffffff;
 	--sh-title-data-color: #64748b;
 }
@@ -70,7 +68,6 @@ const props = withDefaults(defineProps<Props>(), {})
 	height: 2.5rem;
 	width: 2.5rem;
 	border-radius: .25rem;
-	
 	box-shadow: var(--sh-ring-offset-shadow), var(--sh-ring-shadow), var(--sh-shadow, 0 0 #0000);
 }
 
@@ -119,25 +116,25 @@ const props = withDefaults(defineProps<Props>(), {})
 	{
 		display: block;
 	}
-	
+
 	.color-palette--value
 	{
 		width: 100%;
 	}
-	
+
 	.color-palette--is-default
 	{
 		--sh-space-y-reverse: 0;
 		margin-top: calc(0.375rem* calc(1 - var(--sh-space-y-reverse)));
 		margin-bottom: calc(0.375rem* var(--sh-space-y-reverse));
 	}
-	
+
 	.color-palette--inner>:not([hidden])~:not([hidden]) {
 		--sh-space-y-reverse: 0;
 		margin-top: calc(.375rem* calc(1 - var(--sh-space-y-reverse)));
 		margin-bottom: calc(.375rem* var(--sh-space-y-reverse));
 	}
-	
+
 	.color-palette--title-data
 	{
 		font-size: .625rem;
@@ -164,12 +161,11 @@ const props = withDefaults(defineProps<Props>(), {})
 	{
 		width: 100%;
 	}
-	
+
 	.color-palette--title-data
 	{
 		font-size: .75rem;
 		line-height: 1rem;
 	}
 }
-
 </style>

@@ -18,13 +18,12 @@ const prepareRemToPx = (value: string): string => {
 	{
 		return value
 	}
-	
+
 	const rem = Number(value.replace('rem', ''))
 	const px = Math.round(rem * 16)
-	
+
 	return `${px}px`
 };
-
 </script>
 
 <template>
@@ -77,21 +76,20 @@ table.info td.value-spacing
 	{
 		display: table-cell;
 	}
-	
+
 	table.info th.value-info-1
 	{
 		min-width: 52px;
 		max-width: 52px;
 		width: 52px;
 	}
-	
+
 	table.info th.value-info-2
 	{
 		min-width: 80px;
 		max-width: 80px;
 		width: 80px;
 	}
-	
 	table.info th.value-info-3
 	{
 		min-width: 60px;
@@ -99,5 +97,4 @@ table.info td.value-spacing
 		width: 60px;
 	}
 }
-
 </style>

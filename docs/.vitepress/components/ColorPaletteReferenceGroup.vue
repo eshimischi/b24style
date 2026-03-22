@@ -12,48 +12,48 @@ const props = withDefaults(defineProps<Props>(), {})
 
 const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	const base = props.title;
-	
+
 	const result: Record<string, ColorGroup> = {}
-	
+
 	let groupTitle = base
 		.split('')
 		.flatMap((l, i) => {
 			return i !== 0 && l.toUpperCase() === l ? [' ', l] : [l]
 		})
 		.join('')
-	
+
 	groupTitle = groupTitle.charAt(0).toUpperCase() + groupTitle.slice(1)
-	
+
 	result[base] = {
 		title: groupTitle,
 		groups: {},
 		defaultValue: ''
 	} as ColorGroup
-	
+
 	Object.entries(props.group).forEach(([keyColor, valueColor]) => {
 		const group = result[base]
 		let title = `${base}-${keyColor}`
-		
+
 		if(base === 'symlink')
 		{
 			title = `${keyColor}`
 		}
-		
+
 		if(keyColor === 'DEFAULT')
 		{
 			group.defaultValue = valueColor
 			return
 		}
-		
+
 		group.groups[keyColor] = [];
-		
+
 		group.groups[keyColor].push({
 			title: title,
 			value: valueColor,
 			isDefault: group.defaultValue === valueColor
 		} as Color)
 	})
-	
+
 	return result
 })
 </script>
@@ -65,7 +65,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 			:key="titleGroups"
 			class="color-palette-reference--inner" data-class="2xl:contents"
 		>
-			<div class="color-palette-reference--group" data-class="grid mt-3 grid-cols-1 sm:grid-cols-11 gap-y-3 gap-x-2 sm:mt-2 2xl:mt-0">
+			<div class="color-palette-reference--group" data-class="grid grid-cols-1 gap-x-2 gap-y-3 mt-3 sm:grid-cols-11 sm:mt-2 2xl:mt-0">
 				<template
 					v-for="(colors, title) in list.groups"
 					:key="title"
@@ -92,7 +92,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	column-gap: .5rem;
 	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 	display: grid;
-	
+
 	--sh-title-color: #0f172a;
 }
 
@@ -120,8 +120,6 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: stretch;
-	
-	
 }
 
 @media (min-width: 640px)
@@ -130,7 +128,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	{
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
-	
+
 	.color-palette-reference--group
 	{
 		grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -144,7 +142,7 @@ const colorGroups: ComputedRef<Record<string, ColorGroup>> = computed(() => {
 	{
 		display: contents;
 	}
-	
+
 	.color-palette-reference--group
 	{
 		margin-top: 0;
