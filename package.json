@@ -24,6 +24,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
+	"packageManager": "pnpm@10.32.1",
 	"files": [
 		"dist",
 		"fonts",
@@ -43,8 +44,8 @@
 		"playground": "npm-run-all -s playground:*",
 		"playground:build": "npm run build",
 		"playground:clear-fonts": "rimraf ./playground/public/fonts",
-		"playground:copy-fonts": "npx copy-fonts --dest=playground/public/fonts",
-		"playground:run-dev": "npm run --workspace=playground dev",
+		"playground:copy-fonts": "pnpx copy-fonts --dest=playground/public/fonts",
+		"playground:run-dev": "pnpm --filter ./playground dev",
 		"docs:dev": "rimraf ./docs/public/frames/fonts & npx copy-fonts --dest=docs/public/frames/fonts & vitepress dev docs",
 		"docs:build": "npm-run-all -s docs:build:*",
 		"docs:build:init": "npm run build",
@@ -53,6 +54,7 @@
 	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.11",
+		"@tailwindcss/postcss": "^4.2.2",
 		"tailwindcss": "^4.2.2"
 	},
 	"devDependencies": {
